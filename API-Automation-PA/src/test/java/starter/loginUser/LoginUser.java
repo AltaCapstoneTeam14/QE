@@ -120,6 +120,7 @@ public class LoginUser {
             }
 
             restAssuredThat(response -> response.body("message", Matchers.equalTo("Login success")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("200")));
 
         } else if (message.equals("SuccessfullyLoginAdmin")) {
 
@@ -135,7 +136,7 @@ public class LoginUser {
             }
 
             restAssuredThat(response -> response.body("message", Matchers.equalTo("Login success")));
-
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("200")));
 
         }else if (message.equals("EmailOrPasswordIncorrect")){
             restAssuredThat(response -> response.body("message", Matchers.equalTo("email or password incorrect")));
@@ -145,12 +146,15 @@ public class LoginUser {
 
         } else if (message.equals("EmailInvalid")) {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("The email address is invalid.")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else if (message.equals("EmailRequired")) {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("Email is required!")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("Password is required!")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
         }
     }
 }

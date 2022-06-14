@@ -133,13 +133,24 @@ public class Register {
             SerenityRest.given().header("Content-Type", "application/json")
                     .body(requestBody.toJSONString()).post(setAnEndpointForRegister());
 
-        } else { //? INPUT NULL PHONE
+        } else if (input.equals("InputNullPhone")){ //? INPUT NULL PHONE
             JSONObject requestBody = new JSONObject();
 
             requestBody.put("name", "Dhivas Dharma");
             requestBody.put("email", general.randomEmail(input));
             requestBody.put("password", "passwordrahasia");
             requestBody.put("phone", null);
+
+            SerenityRest.given().header("Content-Type", "application/json")
+                    .body(requestBody.toJSONString()).post(setAnEndpointForRegister());
+
+        } else { //? INPUT PHONE WITH CHARACTERS
+            JSONObject requestBody = new JSONObject();
+
+            requestBody.put("name", "Dhivas Dharma");
+            requestBody.put("email", general.randomEmail(input));
+            requestBody.put("password", "passwordrahasia");
+            requestBody.put("phone", "IniPhoneNumbers");
 
             SerenityRest.given().header("Content-Type", "application/json")
                     .body(requestBody.toJSONString()).post(setAnEndpointForRegister());
@@ -162,32 +173,45 @@ public class Register {
     public void setValidateTheDataDetailAfterRegister(String message) throws IOException {
         if (message.equals("AccountRegister")) {
             restAssuredThat(response -> response.body("message", Matchers.equalTo("Add User success")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("201")));
 
         } else if (message.equals("UserExists")) {
             this.email = FileUtils.readFileToString(new File(System.getProperty("user.dir") +
                     "/src/test/resources/filejson/email.json"), StandardCharsets.UTF_8);
             restAssuredThat(response -> response.body("message", Matchers.equalTo("user with email " + this.email + " exist")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else if (message.equals("EmailInvalid")) {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("The email address is invalid.")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else if (message.equals("PasswordInvalid")) {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("The length of phone must be at least 8 characters.")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else if (message.equals("PhoneInvalid")) {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("The length of phone must be between 10 and 18 characters.")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else if (message.equals("NameRequired")) {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("Name is required!")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else if (message.equals("EmailRequired")) {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("Email is required!")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else if (message.equals("PasswordRequired")) {
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("Password is required!")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
+
+        } else if (message.equals("PhoneRequired")){
+            restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("Phone is required!")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else {
-            restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("Phone is required!")));
+            restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("Phone value must be number")));
+            restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
         }
     }
 }
