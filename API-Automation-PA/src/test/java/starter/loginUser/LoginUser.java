@@ -56,7 +56,7 @@ public class LoginUser {
         }else if (input.equals("InputInvalidPassword")){ //? LOGIN WITH INVALID PASSWORD
             JSONObject requestBody = new JSONObject();
 
-            //* READ email &
+            //* READ email
             this.email = FileUtils.readFileToString(new File(System.getProperty("user.dir") +
                     "/src/test/resources/filejson/email.json"), StandardCharsets.UTF_8);
 
@@ -104,15 +104,15 @@ public class LoginUser {
         }
     }
 
-    @Step("validate the data detail {string} after login user")
-    public void setValidateTheDataDetailAfterLoginUser(String message) {
-        if (message.equals("SuccessfullyLogin")){
+    @Step("validate the data detail {string} after login")
+    public void setValidateTheDataDetailAfterLogin(String message) {
+        if (message.equals("SuccessfullyLoginUser")){
 
-            //* CATCH TOKEN
+            //* CATCH TOKEN USER
             Response responseToken = SerenityRest.lastResponse();
             String getToken = responseToken.jsonPath().getString("data.token");
             System.out.println(getToken);
-            try (FileWriter file = new FileWriter("src/test/resources/filejson/token.json")) {
+            try (FileWriter file = new FileWriter("src/test/resources/filejson/tokenUser.json")) {
                 file.write(getToken);
                 file.flush();
             } catch (IOException e) {
@@ -121,7 +121,23 @@ public class LoginUser {
 
             restAssuredThat(response -> response.body("message", Matchers.equalTo("Login success")));
 
-        } else if (message.equals("EmailOrPasswordIncorrect")){
+        } else if (message.equals("SuccessfullyLoginAdmin")) {
+
+            //* CATCH TOKEN ADMIN
+            Response responseToken = SerenityRest.lastResponse();
+            String getToken = responseToken.jsonPath().getString("data.token");
+            System.out.println(getToken);
+            try (FileWriter file = new FileWriter("src/test/resources/filejson/tokenAdmin.json")) {
+                file.write(getToken);
+                file.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            restAssuredThat(response -> response.body("message", Matchers.equalTo("Login success")));
+
+
+        }else if (message.equals("EmailOrPasswordIncorrect")){
             restAssuredThat(response -> response.body("message", Matchers.equalTo("email or password incorrect")));
 
         } else if (message.equals("PasswordInvalid")){ //! BUG | Validate belum sesuai

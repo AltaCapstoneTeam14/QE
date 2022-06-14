@@ -23,8 +23,8 @@ public class loginUserSteps {
         loginUser.setRequestPOSTLoginUser(input);
     }
 
-    @And("validate the data detail {string} after login user")
-    public void validateTheDataDetailAfterLoginUser(String message) {
-        loginUser.setValidateTheDataDetailAfterLoginUser(message);
+    @And("validate the data detail {string} after login")
+    public void validateTheDataDetailAfterLogin(String message) {
+        loginUser.setValidateTheDataDetailAfterLogin(message);
     }
 }

@@ -14,6 +14,4 @@ public class General {
     public String randomPassword(String password) { return faker.internet().password(10,20);}
 //    Minimun password 10, maximumnya 20 Karakter
 
-//*   Kalau pakai random int, masih kemungkinan akan ke generate number yang sudah di daftarkan sebelumnya
-
 }
