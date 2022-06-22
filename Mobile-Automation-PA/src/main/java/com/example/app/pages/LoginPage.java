@@ -19,6 +19,8 @@ public class LoginPage extends BasePageObject {
     By emailRequired(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Email is Required\"]");}
     By passwordRequired(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Password is Required\"]");}
     By showPassword(){ return MobileBy.xpath("//android.widget.EditText[2]/android.widget.Button");}
+    By textYourBalance(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Your Balance\"]");}
+    By notRegistered(){ return MobileBy.xpath("//android.view.View[@content-desc=\"email or password incorrect\"]");}
 
 
     public void inputFieldEmail(String email) throws InterruptedException {
@@ -34,6 +36,8 @@ public class LoginPage extends BasePageObject {
     }
     public void clickButtonSignIn(){ click(buttonSignIn());}
 
+    public void verifyNotRegistered(){ Assertions.assertTrue(find(notRegistered()).isDisplayed());}
+    public void verifyTextYourBalance(){ Assertions.assertTrue(find(textYourBalance()).isDisplayed());}
     public void verifyTextWelcome(){ Assertions.assertTrue(find(textWelcome()).isDisplayed());}
     public void verifyEmailInvalid(){ Assertions.assertTrue(find(emailInvalid()).isDisplayed());}
     public void verifyLessPassword(){ Assertions.assertTrue(find(lessPasswordCharacters()).isDisplayed());}

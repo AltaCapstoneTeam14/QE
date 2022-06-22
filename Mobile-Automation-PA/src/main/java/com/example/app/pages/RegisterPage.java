@@ -18,6 +18,8 @@ public class RegisterPage extends BasePageObject {
     By fieldPassword(){ return MobileBy.xpath("//android.view.View/android.widget.EditText[4]");}
     By fieldConfirmPassword(){ return MobileBy.xpath("//android.view.View/android.widget.EditText[5]");}
     By buttonSignIn() { return MobileBy.xpath("//android.widget.Button[@content-desc=\"Sign Up\"]");}
+    By showPassword() { return MobileBy.xpath("//android.view.View/android.view.View/android.widget.EditText[4]/android.widget.Button");}
+    By showConfirmPassword() { return MobileBy.xpath("//android.view.View/android.view.View/android.widget.EditText[5]/android.widget.Button");}
     //* Selector Alert
     By emailRequired(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Email is Required\"]");}
     By phoneNumberRequired(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Phone Number is Required\"]");}
@@ -29,7 +31,7 @@ public class RegisterPage extends BasePageObject {
     //* Selector Bottom Alert
     By successRegis(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Add User success\"]");}
     By userExist(){ return MobileBy.xpath("//android.view.View[@content-desc=\"user with email user@mail.com     exist\"]");}
-    By differentPassword(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Password Tidak Sama!\"]");} //? DIGANTI
+    By differentPassword(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Password is not same\"]");}
 
     public void clickTextSignUp(){ click(textSignUp());}
     public void inputFieldFullName() throws InterruptedException {
@@ -50,10 +52,12 @@ public class RegisterPage extends BasePageObject {
     public void inputFieldPassword(String password){
         click(fieldPassword());
         sendKeys(fieldPassword(), password);
+        click(showPassword());
     }
     public void inputFieldConfirmPassword(String confirmPassword){
         click(fieldConfirmPassword());
         sendKeys(fieldConfirmPassword(), confirmPassword);
+        click(showConfirmPassword());
     }
     public void clickButtonSignUp() { click(buttonSignIn());}
 

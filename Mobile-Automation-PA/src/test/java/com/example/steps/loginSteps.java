@@ -26,9 +26,9 @@ public class loginSteps {
     @Then("I get the {string}")
     public void iGetThe(String result) {
         if (result.equals("redirectHomepage")){
-            //! MASIH DEVELOPMENT
+            loginPage.verifyTextYourBalance();
         }else if (result.equals("notRegisteredAccount")){
-            //! MASIH DEVELOPMENT
+            loginPage.verifyNotRegistered();
         }else if (result.equals("invalidEmail")){
             loginPage.verifyEmailInvalid();
         }else if (result.equals("lessPassword")){
