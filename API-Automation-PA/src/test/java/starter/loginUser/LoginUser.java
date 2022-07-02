@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class LoginUser {
-    String base_url = "http://54.91.3.166:8081/api-dev/v1/auth/";
+    String base_url = "http://44.201.153.46:8081/api-dev/v1/auth/";
     String email,password,token;
 
     @Steps

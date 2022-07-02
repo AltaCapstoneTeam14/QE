@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class LoginAdmin {
-    String base_url = "http://54.91.3.166:8081/api-dev/v1/auth/login/";
+    String base_url = "http://44.201.153.46:8081/api-dev/v1/auth/login/";
 
     @Steps
     General general;
@@ -30,8 +30,8 @@ public class LoginAdmin {
         if (input.equals("InputValidData")){ //? INPUT VALID DATA
             JSONObject requestBody = new JSONObject();
 
-            requestBody.put("email", "admin@admin.com");
-            requestBody.put("password", "adminadmin");
+            requestBody.put("email", "admin@gmail.com");
+            requestBody.put("password", "password");
 
             SerenityRest.given().header("Content-Type", "application/json")
                     .body(requestBody.toJSONString()).post(setAnEndpointForLoginAdmin());
@@ -48,8 +48,8 @@ public class LoginAdmin {
         }else if (input.equals("InputInvalidPassword")){ //? LOGIN WITH INVALID PASSWORD
             JSONObject requestBody = new JSONObject();
 
-            requestBody.put("email", "admin@admin.com");
-            requestBody.put("password", "password");
+            requestBody.put("email", "admin@gmail.com");
+            requestBody.put("password", "wrongPassword");
 
             SerenityRest.given().header("Content-Type", "application/json")
                     .body(requestBody.toJSONString()).post(setAnEndpointForLoginAdmin());
@@ -57,7 +57,7 @@ public class LoginAdmin {
         }else if (input.equals("InputPasswordLessCharacters")){ //? INPUT PASSWORD LESS THAN 8 CHARACTERS
             JSONObject requestBody = new JSONObject();
 
-            requestBody.put("email", "admin@admin.com");
+            requestBody.put("email", "admin@gmail.com");
             requestBody.put("password", "rahasia");
 
             SerenityRest.given().header("Content-Type", "application/json")
@@ -84,7 +84,7 @@ public class LoginAdmin {
         }else { //? INPUT NULL PASSWORD
             JSONObject requestBody = new JSONObject();
 
-            requestBody.put("email", "admin@admin.com");
+            requestBody.put("email", "admin@gmail.com");
             requestBody.put("password", null);
 
             SerenityRest.given().header("Content-Type", "application/json")

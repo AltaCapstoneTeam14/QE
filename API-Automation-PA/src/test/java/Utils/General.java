@@ -13,5 +13,7 @@ public class General {
     public String randomName(String name) { return faker.name().fullName(); }
     public String randomPassword(String password) { return faker.internet().password(10,20);}
 //    Minimun password 10, maximumnya 20 Karakter
+    public String randomPhoneNumbers(String phoneNumber){ return "089585515" + rand.nextInt(500);}
+
 
 }

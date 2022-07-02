@@ -16,8 +16,8 @@ import java.nio.charset.StandardCharsets;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class Register {
-    String base_url = "http://54.91.3.166:8081/api-dev/v1/auth/";
-    String email, password, name;
+    String base_url = "http://44.201.153.46:8081/api-dev/v1/auth/";
+    String email, password, name, phoneNumber;
 
     @Steps
     General general;
@@ -34,6 +34,8 @@ public class Register {
             this.name = general.randomName(input);
             this.email = general.randomEmail(input);
             this.password = general.randomPassword(input);
+            this.phoneNumber = general.randomPhoneNumbers(input);
+
             try (FileWriter file = new FileWriter("src/test/resources/filejson/email.json")) {
                 file.write(this.email);
                 file.flush();
@@ -44,10 +46,16 @@ public class Register {
                 e.printStackTrace();
             }
 
+            try (FileWriter file = new FileWriter("src/test/resources/filejson/phoneNumber.json")) {
+                file.write(this.phoneNumber);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             requestBody.put("name", this.name);
             requestBody.put("email", this.email);
             requestBody.put("password", this.password);
-            requestBody.put("phone", "08785858555");
+            requestBody.put("phone", this.phoneNumber);
 
             SerenityRest.given().header("Content-Type", "application/json")
                     .body(requestBody.toJSONString()).post(setAnEndpointForRegister());
@@ -164,7 +172,9 @@ public class Register {
             restAssuredThat(response -> response.statusCode(201));
         } else if (sCode.equals("200")) {
             restAssuredThat(response -> response.statusCode(200));
-        } else {
+        } else if (sCode.equals("401")) {
+            restAssuredThat(response -> response.statusCode(401));
+        }else {
             restAssuredThat(response -> response.statusCode(400));
         }
     }
