@@ -86,7 +86,6 @@ public class UpdatePassword {
             restAssuredThat(response -> response.body("message", Matchers.equalTo("Full authentication is required to access this resource")));
             restAssuredThat(response -> response.body("'status'", Matchers.equalTo(401)));
         }else if (message.equals("PasswordInvalid")){
-            //! BUG VALIDATE TEKS BLM SESUAI
             restAssuredThat(response -> response.body("errors[0]", Matchers.equalTo("The length of password must be at least 8 characters.")));
             restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
         }else {

@@ -33,7 +33,7 @@ public class Pulsa {
 
 //           * Catch Token
             this.token = FileUtils.readFileToString(new File(System.getProperty("user.dir") +
-                    "/src/test/resources/filejson/tokenAdmin.json"), StandardCharsets.UTF_8);
+                    "/src/test/resources/filejson/tokenUser.json"), StandardCharsets.UTF_8);
             System.out.println(this.token);
 //           * Put Token in header
             SerenityRest.given().header("Content-Type", "application/json")
