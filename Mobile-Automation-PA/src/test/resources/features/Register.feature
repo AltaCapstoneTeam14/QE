@@ -21,7 +21,7 @@ Feature: Register
 #      | user          | 08752525412 | password | password     | invalidEmail        |
 #      | user@mail.com | 08752       | password | password     | lessNumbers         |
 #      | user@mail.com | 08752525412 | pass     | password     | lessPassword        |
-      | user@mail.com | 08752525412 | password | difpassword  | differentPassword   |
+#      | user@mail.com | 08752525412 | password | difpassword  | differentPassword   |
 #      |               | 08752525412 | password | password     | nullEmail           |
 #      | user@mail.com |             | password | password     | nullPhone           |
 #      | user@mail.com | 08752525412 |          | password     | nullPassword        |

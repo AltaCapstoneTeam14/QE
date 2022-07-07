@@ -12,10 +12,10 @@
 #    Then I get the "<result>"
 #    Examples:
 #      | email| password | result |
-#      | user@mail.com     | password      | redirectHomepage      |
+#      | whale@mail.com     | password      | redirectHomepage      |
 #      | random@mail.com   | password      | notRegisteredAccount  |
-##      | user              | password      | invalidEmail          |
-##      | user@mail.com     | wrong         | lessPassword          |
-##      |                   | password      | nullEmail             |
-##      | user@mail.com     |               | nullPassword          |
-#
+#      | user              | password      | invalidEmail          |
+#      | user@mail.com     | wrong         | lessPassword          |
+#      |                   | password      | nullEmail             |
+#      | user@mail.com     |               | nullPassword          |
+

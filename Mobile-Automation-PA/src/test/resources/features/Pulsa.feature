@@ -1,0 +1,16 @@
+Feature: Pulsa
+  As a user
+  I want to buy pulsa
+  So that i successfully to buy pulsa
+
+
+  Scenario: As a user, i want to buy pulsa
+    Given I am on the homepage
+    When I click button pulsa
+    And I input field nomer telepon
+    And I choose operator
+    And I click provider
+    And I click pulsa nominal
+    And I click lanjut
+    And I click bayar
+    Then I get result Buy Pulsa Success

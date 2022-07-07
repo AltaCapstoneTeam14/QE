@@ -40,6 +40,8 @@ public class BasePageObject {
         find(locator).clear();
     }
 
+    public void coordinat(By locator){ find(locator).getCoordinates();}
+
     public boolean isDisplayed(By locator){
         return find(locator).isDisplayed();
     }
