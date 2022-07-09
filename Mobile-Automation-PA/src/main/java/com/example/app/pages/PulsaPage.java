@@ -13,8 +13,6 @@ public class PulsaPage extends BasePageObject {
     By buttonPulsa() { return MobileBy.xpath("//android.widget.ImageView[@content-desc=\"Pulsa\"]");}
     By fieldNomerTelepon() { return MobileBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.view.View[2]/android.widget.EditText");}
     By chooseOperator() { return MobileBy.xpath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[2]/android.view.View[2]");}
-    By operatorTelkomsel() { return MobileBy.xpath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[2]/android.view.View[1]/android.view.View[1]/android.view.View[1]");}
-//    By operatorIndosat() { return MobileBy.xpath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[2]/android.view.View[1]/android.view.View[1]/android.view.View[2]");}
     By providerIndosat() { return MobileBy.AccessibilityId("Indosat");}
     By nominalPulsaIndosat() { return MobileBy.xpath("//hierarchy/android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.FrameLayout[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[1]/android.view.View[2]/android.view.View[3]/android.view.View[1]/android.view.View[1]/android.view.View[1]");}
     By buttonLanjut() { return MobileBy.xpath("//android.widget.Button[@content-desc=\"Lanjut\"]");}
@@ -24,6 +22,7 @@ public class PulsaPage extends BasePageObject {
     By textSelectPulsaAmount() { return MobileBy.xpath("//android.view.View[@content-desc=\"Please select the pulsa amount\"]");}
     By textEnterPhoneNumber() { return MobileBy.xpath("//android.view.View[@content-desc=\"please enter phone number\"]");}
     By textBalanceNotEnough() { return MobileBy.xpath("//android.view.View[@content-desc=\"your balance is not enough\"]");}
+    By textLengthPhone(){ return MobileBy.xpath("//android.view.View[@content-desc=\"The length of phone must be between 10 and 14 characters\"]");}
 
     public void clickButtonPulsa(){click(buttonPulsa());}
     public void inputNomerTelepon() throws InterruptedException {
@@ -32,11 +31,26 @@ public class PulsaPage extends BasePageObject {
         click(fieldNomerTelepon());
         sendKeys(fieldNomerTelepon(),"08741528255");
     }
+
+    public void inputNomerTeleponLessNumbers() throws InterruptedException {
+        click(fieldNomerTelepon());
+        sleep(150);
+        click(fieldNomerTelepon());
+        sendKeys(fieldNomerTelepon(),"0874");
+    }
+
+    public void inputNomerTeleponMorethanNumbers() throws InterruptedException {
+        click(fieldNomerTelepon());
+        sleep(150);
+        click(fieldNomerTelepon());
+        sendKeys(fieldNomerTelepon(),"087415282557778");
+    }
+
     public void clickChooseOperator() throws InterruptedException {
         sleep(150);
         click(chooseOperator());
     }
-    public void clickOperatorTelkomsel(){ click(operatorTelkomsel());}
+
     public void clickProviderIndosat() throws InterruptedException {
         sleep(200);
         click(providerIndosat());}
@@ -47,5 +61,6 @@ public class PulsaPage extends BasePageObject {
     public void verifySelectPulsaAmount(){ Assertions.assertTrue(find(textSelectPulsaAmount()).isDisplayed());}
     public void verifyEnterPhoneNumber(){ Assertions.assertTrue(find(textEnterPhoneNumber()).isDisplayed());}
     public void verifyBalanceNotEnough(){ Assertions.assertTrue(find(textBalanceNotEnough()).isDisplayed());}
+    public void verifyLengthPhone(){ Assertions.assertTrue(find(textLengthPhone()).isDisplayed());}
 
 }

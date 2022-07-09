@@ -52,4 +52,12 @@ public class pulsaSteps {
 
     @Then("I get result your balance is not enough")
     public void iGetResultYourBalanceIsNotEnough() { pulsaPage.verifyBalanceNotEnough();}
+
+    //  ! TC 5 & 6
+
+    @And("I input field nomer telepon less numbers")
+    public void iInputFieldNomerTeleponLessNumbers() throws InterruptedException { pulsaPage.inputNomerTeleponLessNumbers();}
+
+    @And("I input field nomer telepon more than numbers")
+    public void iInputFieldNomerTeleponMoreThanNumbers() throws InterruptedException { pulsaPage.inputNomerTeleponMorethanNumbers();}
 }
