@@ -16,7 +16,7 @@
 #    Then I get "<result>" in register
 #    Examples:
 #      | email | phoneNumber |  password |  confirmPassword | result |
-##      | user1@mail.com | 08752525412 | password | password     | redirectLogin       |
+##      | user1@mail.com | 08752525413 | password | password     | redirectLogin       |
 ##      | user@mail.com | 08752525412 | password | password     | userExist           |
 ##      | user          | 08752525412 | password | password     | invalidEmail        |
 ##      | user@mail.com | 08752       | password | password     | lessNumbers         |
