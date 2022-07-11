@@ -1,10 +1,10 @@
-Feature: Paket Data
-  As a user
-  I want to buy paket data
-  So that i successfully to buy paket data
+#Feature: Paket Data
+#  As a user
+#  I want to buy paket data
+#  So that i successfully to buy paket data
 #
 #  Scenario: As a user, i want to buy paket data
-#    Given I am on the homepage
+  #    Given I am on the homepage
 #    When I click button paket data
 #    And I input field nomer telepon
 #    And I choose operator
@@ -43,22 +43,22 @@ Feature: Paket Data
 #    And I click bayar
 #    Then I get result your balance is not enough
 #
-  Scenario: As a user, i want to buy paket data with less numbers 10
-    Given I am on the homepage
-    When I click button paket data
-    And I input field nomer telepon less numbers
-    And I choose operator
-    And I click provider
-    And I click pulsa nominal
-    And I click lanjut
-    Then I get result The length of phone must be between 10 and 14 characters
-
-  Scenario: As a user, i want to buy paket data with more than numbers 14
-    Given I am on the homepage
-    When I click button paket data
-    And I input field nomer telepon more than numbers
-    And I choose operator
-    And I click provider
-    And I click pulsa nominal
-    And I click lanjut
-    Then I get result The length of phone must be between 10 and 14 characters
+#  Scenario: As a user, i want to buy paket data with less numbers 10
+#    Given I am on the homepage
+#    When I click button paket data
+#    And I input field nomer telepon less numbers
+#    And I choose operator
+#    And I click provider
+#    And I click pulsa nominal
+#    And I click lanjut
+#    Then I get result The length of phone must be between 10 and 14 characters
+#
+#  Scenario: As a user, i want to buy paket data with more than numbers 14
+#    Given I am on the homepage
+#    When I click button paket data
+#    And I input field nomer telepon more than numbers
+#    And I choose operator
+#    And I click provider
+#    And I click pulsa nominal
+#    And I click lanjut
+#    Then I get result The length of phone must be between 10 and 14 characters
