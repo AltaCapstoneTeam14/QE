@@ -21,7 +21,7 @@ public class PulsaPage extends BasePageObject {
     By successBuyPulsa() { return MobileBy.xpath("//android.view.View[@content-desc=\"BUY PULSA SUCCESS\"]");}
     By textSelectPulsaAmount() { return MobileBy.xpath("//android.view.View[@content-desc=\"Please select the pulsa amount\"]");}
     By textEnterPhoneNumber() { return MobileBy.xpath("//android.view.View[@content-desc=\"please enter phone number\"]");}
-    By textBalanceNotEnough() { return MobileBy.xpath("//android.view.View[@content-desc=\"your balance is not enough\"]");}
+    By textBalanceNotEnough() { return MobileBy.xpath("//android.view.View[@content-desc=\"Your balance is not enough\"]");}
     By textLengthPhone(){ return MobileBy.xpath("//android.view.View[@content-desc=\"The length of phone must be between 10 and 14 characters\"]");}
 
     public void clickButtonPulsa(){click(buttonPulsa());}

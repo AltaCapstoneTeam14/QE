@@ -14,7 +14,7 @@ public class topupGopaySteps {
     //  ! TC1
     @Given("I am on the homepage")
     public void iAmOnTheHomepage() throws InterruptedException{
-        loginPage.inputFieldEmail("whale10@gmail.com");
+        loginPage.inputFieldEmail("whal@gmail.com");
         loginPage.inputFieldPassword("password");
         loginPage.clickButtonSignIn();
     }

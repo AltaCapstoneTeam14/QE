@@ -34,7 +34,7 @@ public class editProfileSteps {
         if (result.equals("UpdateSuccess")){
             editProfilePage.verifySuccessUpdate();
         }else if(result.equals("userExist")){
-            registerPage.verifyUserExist();
+            editProfilePage.verifyUserExist();
         }else if(result.equals("invalidEmail")){
             registerPage.verifyEmailInvalid();
         }else if(result.equals("PhoneNumberExist")){

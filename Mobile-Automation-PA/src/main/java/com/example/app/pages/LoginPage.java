@@ -20,7 +20,7 @@ public class LoginPage extends BasePageObject {
     By passwordRequired(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Password is Required\"]");}
     By showPassword(){ return MobileBy.xpath("//android.widget.EditText[2]/android.widget.Button");}
     By textYourBalance(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Your Balance\"]");}
-    By notRegistered(){ return MobileBy.xpath("//android.view.View[@content-desc=\"email or password incorrect\"]");}
+    By notRegistered(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Email or password incorrect\"]");}
 
 
     public void inputFieldEmail(String email) throws InterruptedException {

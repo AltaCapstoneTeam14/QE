@@ -19,6 +19,8 @@ public class EditProfilePage extends BasePageObject {
     By successUpdate(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Update user success\"]");}
     By phoneExist(){ return MobileBy.xpath("//android.view.View[@content-desc=\"User with phone 81888999882 exist\"]");}
     By lengthPhone(){ return MobileBy.xpath("//android.view.View[@content-desc=\"The length must be between 10 and 18 characters\"]");}
+    By userExist(){ return MobileBy.xpath("//android.view.View[@content-desc=\"user with email user102@gmail.com exist\"]");}
+    By buttonKeluar(){ return MobileBy.AccessibilityId("Keluar");}
 
     public void clickButtonProfile(){ click(buttonProfile());}
     public void clickButtonUsername(){ click(buttonUsername());}
@@ -44,4 +46,5 @@ public class EditProfilePage extends BasePageObject {
     public void verifySuccessUpdate(){ Assertions.assertTrue(find(successUpdate()).isDisplayed());}
     public void verifyPhoneExist(){ Assertions.assertTrue(find(phoneExist()).isDisplayed());}
     public void verifyLengthPhone(){ Assertions.assertTrue(find(lengthPhone()).isDisplayed());}
+    public void verifyUserExist(){ Assertions.assertTrue(find(buttonKeluar()).isDisplayed());}
 }

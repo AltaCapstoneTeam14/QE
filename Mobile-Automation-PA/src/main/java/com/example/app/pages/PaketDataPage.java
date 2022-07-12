@@ -14,8 +14,9 @@ public class PaketDataPage extends BasePageObject {
 
 //    *Validation
     By successBuyKuota() { return MobileBy.xpath("//android.view.View[@content-desc=\"BUY QUOTA SUCCESS\"]");}
-    By textSelectKuotaAmount() { return MobileBy.xpath("//android.view.View[@content-desc=\"please select the pulsa amount\"]");}
+    By textSelectKuotaAmount() { return MobileBy.xpath("//android.view.View[@content-desc=\"Please select the kuota amount\"]");}
     By textLengthPhone(){ return MobileBy.xpath("//android.view.View[@content-desc=\"The length of phone must be between 10 and 14 characters\"]");}
+    By textEnterPhoneNumberPaketData() { return MobileBy.xpath("//android.view.View[@content-desc=\"Please enter phone number\"]");}
 
 
     public void clickButtonPaketData(){ click(buttonPaketData());}
@@ -25,4 +26,5 @@ public class PaketDataPage extends BasePageObject {
     public void verifySuccessBuyQuota(){ Assertions.assertTrue(find(successBuyKuota()).isDisplayed());}
     public void verifySelectKuotaAmout(){ Assertions.assertTrue(find(textSelectKuotaAmount()).isDisplayed());}
     public void verifyLengthAmout(){ Assertions.assertTrue(find(textLengthPhone()).isDisplayed());}
+    public void verifyEnterPhoneNumberPaketData(){ Assertions.assertTrue(find(textEnterPhoneNumberPaketData()).isDisplayed());}
 }

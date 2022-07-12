@@ -29,8 +29,8 @@ public class RegisterPage extends BasePageObject {
     By lessPhoneNumbers(){ return MobileBy.xpath("//android.view.View[@content-desc=\"The length must be between 10 and 18 characters\"]");}
     By lessPasswordCharacters(){ return MobileBy.xpath("//android.view.View[@content-desc=\"The length must be at least 8 characters\"]");}
     //* Selector Bottom Alert
-    By successRegis(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Add User success\"]");}
-    By userExist(){ return MobileBy.xpath("//android.view.View[@content-desc=\"user with email user@mail.com     exist\"]");}
+    By successRegis(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Register success\"]");}
+    By userExist(){ return MobileBy.xpath("//android.view.View[@content-desc=\"User with email user@mail.com exist\"]");}
     By differentPassword(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Password is not same\"]");}
 
     public void clickTextSignUp(){ click(textSignUp());}

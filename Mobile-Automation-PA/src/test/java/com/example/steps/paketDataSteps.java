@@ -19,7 +19,9 @@ public class paketDataSteps {
 
     @Then("I get result Buy Paket Data Success")
     public void iGetResultBuyPaketDataSuccess() { paketDataPage.verifySuccessBuyQuota();}
-
+    //  ! TC2
+    @Then("I get result please enter phone number in paket data")
+    public void iGetResultPleaseEnterPhoneNumberInPaketData() { paketDataPage.verifyEnterPhoneNumberPaketData();}
     //  ! TC3
     @Then("I get result please select the kuota amount")
     public void iGetResultPleaseSelectTheKuotaAmount() { paketDataPage.verifySelectKuotaAmout();}
@@ -27,7 +29,6 @@ public class paketDataSteps {
     //  ! TC 5 & 6
     @Then("I get result The length of phone must be between 10 and 14 characters")
     public void iGetResultTheLengthOfPhoneMustBeBetweenAndCharacters() { paketDataPage.verifyLengthAmout();}
-
 
 
 }

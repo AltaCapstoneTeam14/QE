@@ -15,7 +15,7 @@ public class dailyQuestSteps {
 //    !TC 1
     @Given("I am on the homepage daily quest")
     public void iAmOnTheHomepageDailyQuest() throws InterruptedException {
-        loginPage.inputFieldEmail("whale1@gmail.com");
+        loginPage.inputFieldEmail("whale11@gmail.com");
         loginPage.inputFieldPassword("password");
         loginPage.clickButtonSignIn();
     }
