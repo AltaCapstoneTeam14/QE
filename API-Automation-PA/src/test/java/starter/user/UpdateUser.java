@@ -17,7 +17,7 @@ import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class UpdateUser {
 
-    String base_url = "http://44.201.153.46:8081/api-dev/v1/";
+    String base_url = "http://44.201.153.46:8081/api/v1/";
     String token, email, phoneNumber, randomPhoneNumber;
 
     @Steps
@@ -96,7 +96,7 @@ public class UpdateUser {
             restAssuredThat(response -> response.body("message", Matchers.equalTo("Full authentication is required to access this resource")));
             restAssuredThat(response -> response.body("'status'", Matchers.equalTo(401)));
         }else {
-            restAssuredThat(response -> response.body("message", Matchers.equalTo("user with email user102@gmail.com exist")));
+            restAssuredThat(response -> response.body("message", Matchers.equalTo("User with email user102@gmail.com exist")));
             restAssuredThat(response -> response.body("'code'", Matchers.equalTo("400")));
         }
     }

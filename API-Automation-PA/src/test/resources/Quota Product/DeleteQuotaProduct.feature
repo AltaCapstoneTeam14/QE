@@ -10,5 +10,5 @@ Feature: Delete Quota Product
     And validate the data detail "<message>" after delete quota product
     Examples:
       | input | sCode | message |
-      | validToken    | 201 | DeleteProvider   |
-      | invalidToken  | 401 | Unauthorized  |
+#      | validToken    | 201 | DeleteProvider   |
+      | invalidToken  | 401 | Unauthorized     |

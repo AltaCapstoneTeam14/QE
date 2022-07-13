@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class Register {
-    String base_url = "http://44.201.153.46:8081/api-dev/v1/auth/";
+    String base_url = "http://44.201.153.46:8081/api/v1/auth/";
     String email, password, name, phoneNumber;
 
     @Steps
@@ -188,7 +188,7 @@ public class Register {
         } else if (message.equals("UserExists")) {
             this.email = FileUtils.readFileToString(new File(System.getProperty("user.dir") +
                     "/src/test/resources/filejson/email.json"), StandardCharsets.UTF_8);
-            restAssuredThat(response -> response.body("message", Matchers.equalTo("user with email " + this.email + " exist")));
+            restAssuredThat(response -> response.body("message", Matchers.equalTo("User with email " + this.email + " exist")));
             restAssuredThat(response -> response.body("code", Matchers.equalTo("400")));
 
         } else if (message.equals("EmailInvalid")) {

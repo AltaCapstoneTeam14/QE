@@ -3,7 +3,7 @@ Feature: Update Pulsa Product
   I want to update pulsa product
   So that i can to update pulsa product
 
-  Scenario Outline: Update Quota Product Functionality
+  Scenario Outline: Update Pulsa Product Functionality
     Given I set an endpoint for update pulsa product
     When I request "<input>" PUT pulsa product
     Then I validate the status code is "<sCode>"

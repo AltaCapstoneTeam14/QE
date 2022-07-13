@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 import static net.serenitybdd.rest.SerenityRest.restAssuredThat;
 
 public class TopupBank {
-    String base_url = "http://44.201.153.46:8081/api-dev/v1/transactions/topup/";
+    String base_url = "http://44.201.153.46:8081/api/v1/transactions/topup/";
     String token;
 
     @Step("I set an endpoint for add Top up Bank Transfer")
