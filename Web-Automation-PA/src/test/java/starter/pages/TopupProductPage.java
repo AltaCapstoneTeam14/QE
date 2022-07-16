@@ -12,7 +12,7 @@ public class TopupProductPage extends PageObject {
     private By fieldAmount(){ return By.xpath("//input[@placeholder='Amount']");}
     private By fieldGrossAmount(){ return By.xpath("//input[@placeholder='Gross Amount']");}
     private By buttonSubmit(){ return By.cssSelector("button[type='submit']");}
-    private By buttonEdit(){ return By.xpath("(//button[@type='button'])[2]");}
+    private By buttonEdit(){ return By.xpath("(//button[@type='button'])");}
     private By buttonDelete(){ return By.xpath("(//tbody/tr[1]/td[5]/button[1]");}
     private By buttonSearch(){ return By.xpath("input[placeholder='Search . . .']");}
     private By productTopup50K(){ return By.xpath("//td[normalize-space()='TOPUP 50K']");}
@@ -61,6 +61,7 @@ public class TopupProductPage extends PageObject {
 
     @Step
     public boolean verifyFailedData() { return $(failedAddData()).isDisplayed();}
+    @Step
     public boolean verifyFailedDataEquals() { return $(failedAddData()).equals("Failed Add Data!");}
 
 

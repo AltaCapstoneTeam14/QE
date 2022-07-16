@@ -48,6 +48,7 @@ public class QuotaProductPage extends PageObject {
 
     @Step
     public boolean verifyFailedData() { return $(failedAddData()).isDisplayed();}
+    @Step
     public boolean verifyFailedDataEquals() { return $(failedAddData()).equals("Failed Add Data!");}
 
     @Step
