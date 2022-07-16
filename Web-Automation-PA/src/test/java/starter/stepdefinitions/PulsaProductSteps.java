@@ -2,6 +2,7 @@ package starter.stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import starter.pages.PulsaProductPage;
 
@@ -9,6 +10,9 @@ public class PulsaProductSteps {
 
     @Steps
     PulsaProductPage pulsaProductPage;
+
+    @When("I click sidebar Pulsa Product")
+    public void iClickSidebarPulsaProduct() { pulsaProductPage.clickSidebarPulsaProduct();}
 
     @And("I input field {string} name in pulsa product")
     public void iInputFieldNameInPulsaProduct(String name) { pulsaProductPage.inputFieldName(name);}
@@ -30,7 +34,7 @@ public class PulsaProductSteps {
 
     @Then("I get the {string} pulsa product")
     public void iGetThePulsaProduct(String result) {
-        if (result.equals("redirectTopupProductPage")){
+        if (result.equals("redirectPulsaProductPage")){
             pulsaProductPage.verifyAddData();
             pulsaProductPage.verifyAddDataEquals();
         }else {
@@ -59,4 +63,6 @@ public class PulsaProductSteps {
         pulsaProductPage.verifyPulsa10K();
         pulsaProductPage.verifyPulsa10KEquals();
     }
+
+
 }

@@ -24,7 +24,10 @@ public class TopupProductSteps {
         loginPage.clickButtonLoginAccount();
     }
 
-    @When("I click button Add New")
+    @When("I click sidebar Topup Product")
+    public void iClickSidebarTopupProduct() { topupProductPage.clickSidebarTopupProduct();}
+
+    @And("I click button Add New")
     public void iClickButtonAddNew() { topupProductPage.clickAddNew();}
 
     @And("I input field {string} name in top up product")
@@ -78,4 +81,6 @@ public class TopupProductSteps {
         topupProductPage.verifyProduct50K();
         topupProductPage.verifyProduct50KEquals();
     }
+
+
 }

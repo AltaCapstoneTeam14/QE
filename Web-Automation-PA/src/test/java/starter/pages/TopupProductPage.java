@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 public class TopupProductPage extends PageObject {
 
 //    *Selector
+    private By sidebarTopupProduct(){ return By.xpath("//span[normalize-space()='Top up Product']");}
     private By buttonAddNew(){ return By.cssSelector("button[class='btn btn-success']");}
     private By fieldName(){ return By.xpath("//input[@placeholder='Name']");}
     private By fieldAmount(){ return By.xpath("//input[@placeholder='Amount']");}
@@ -25,9 +26,9 @@ public class TopupProductPage extends PageObject {
 
 
     @Step
-    public void clickAddNew(){
-        $(buttonAddNew()).click();
-    }
+    public void clickSidebarTopupProduct(){ $(sidebarTopupProduct()).click();}
+    @Step
+    public void clickAddNew(){$(buttonAddNew()).click();}
     @Step
     public void inputFieldName(String name){$(fieldName()).type(name);}
     @Step

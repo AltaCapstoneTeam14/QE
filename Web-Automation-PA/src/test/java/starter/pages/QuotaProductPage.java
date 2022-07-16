@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 public class QuotaProductPage extends PageObject {
 
 //    *Selector
+    private By sidebarQuotaProduct(){ return By.xpath("//span[normalize-space()='Quota Product']");}
     private By fieldName(){ return By.xpath("//input[@placeholder='Name']");}
     private By fieldDescription(){ return By.xpath("//input[@placeholder='Description']");}
     private By fieldStock(){ return By.xpath("//input[@placeholder='Stock']");}
@@ -22,6 +23,8 @@ public class QuotaProductPage extends PageObject {
     private By failedAddData(){ return By.xpath("//h2[normalize-space()='Failed Add Data!']");}
 
 
+    @Step
+    public void clickSidebarQuotaProduct(){ $(sidebarQuotaProduct()).click();}
     @Step
     public void inputFieldName(String name){ $(fieldName()).sendKeys(name);}
     @Step

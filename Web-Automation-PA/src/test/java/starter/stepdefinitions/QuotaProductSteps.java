@@ -2,6 +2,7 @@ package starter.stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import starter.pages.QuotaProductPage;
 
@@ -9,6 +10,9 @@ public class QuotaProductSteps {
 
     @Steps
     QuotaProductPage quotaProductPage;
+
+    @When("I click sidebar Quota Product")
+    public void iClickSidebarQuotaProduct() { quotaProductPage.clickSidebarQuotaProduct();}
 
     @And("I input field {string} name in quota product")
     public void iInputFieldNameInQuotaProduct(String name) { quotaProductPage.inputFieldName(name);}
@@ -59,4 +63,6 @@ public class QuotaProductSteps {
         quotaProductPage.verifyQuota4GB();
         quotaProductPage.verifyQuota4GBEquals();
     }
+
+
 }

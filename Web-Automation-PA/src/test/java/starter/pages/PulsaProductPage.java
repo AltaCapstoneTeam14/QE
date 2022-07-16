@@ -9,6 +9,7 @@ public class PulsaProductPage extends PageObject {
 
 
 //    *Selector
+    private By sidebarPulsaProduct(){ return By.xpath("//span[normalize-space()='Pulsa Product']");}
     private By fieldName(){ return By.xpath("//input[@placeholder='Name']");}
     private By fieldDenom(){ return By.xpath("//input[@placeholder='Denom']");}
     private By fieldStock(){ return By.xpath("//input[@placeholder='Stock']");}
@@ -23,6 +24,8 @@ public class PulsaProductPage extends PageObject {
     private By successAddData(){ return By.xpath("//h2[normalize-space()='Pulsa Product']");}
     private By failedAddData(){ return By.xpath("//h2[normalize-space()='Failed Add Data!']");}
 
+    @Step
+    public void clickSidebarPulsaProduct(){ $(sidebarPulsaProduct()).click();}
     @Step
     public void inputFieldName(String name){ $(fieldName()).sendKeys(name);}
     @Step
