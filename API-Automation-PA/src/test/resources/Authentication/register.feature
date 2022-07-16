@@ -10,7 +10,7 @@ Feature: Register
     And validate the data detail "<message>" after register
     Examples:
       | input | sCode | message |
-#      | InputValidRegister          | 201 | AccountRegister  |
+      | InputValidRegister          | 201 | AccountRegister  |
       | InputSameData               | 400 | UserExists       |
       | InputInvalidEmail           | 400 | EmailInvalid     |
       | InputPasswordLessCharacters | 400 | PasswordInvalid  |

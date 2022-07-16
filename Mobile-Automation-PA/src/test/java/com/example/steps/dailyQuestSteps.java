@@ -21,10 +21,10 @@ public class dailyQuestSteps {
     }
 
     @When("I click button daily quest")
-    public void iClickButtonDailyQuest() { dailyQuestPage.clickButtonDailyQuest();}
+    public void iClickButtonDailyQuest() throws InterruptedException { dailyQuestPage.clickButtonDailyQuest();}
 
     @And("I click button claim")
-    public void iClickButtonClaim() { dailyQuestPage.clickButtonClaim();}
+    public void iClickButtonClaim() throws InterruptedException { dailyQuestPage.clickButtonClaim();}
 
     @And("I click button oke")
     public void iClickButtonOke() { dailyQuestPage.clickButtonOke();}

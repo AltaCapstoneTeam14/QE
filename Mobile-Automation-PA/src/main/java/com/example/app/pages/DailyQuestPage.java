@@ -5,6 +5,8 @@ import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
+import static java.lang.Thread.sleep;
+
 public class DailyQuestPage extends BasePageObject {
 
 //    *Selector
@@ -15,9 +17,9 @@ public class DailyQuestPage extends BasePageObject {
 //    *Validation
     By textTakenCoins(){ return MobileBy.xpath("//android.view.View[1]/android.view.View[1]/android.view.View[6]");}
 
-    public void clickButtonDailyQuest(){buttonDailyQuest();}
-    public void clickButtonClaim(){buttonClaim();}
-    public void clickButtonOke(){buttonOke();}
+    public void clickButtonDailyQuest() { buttonDailyQuest();}
+    public void clickButtonClaim() { buttonClaim();}
+    public void clickButtonOke(){ buttonOke();}
 
     public void verifyTextTakenCoins(){ Assertions.assertTrue(find(textTakenCoins()).isDisplayed());}
 
