@@ -22,7 +22,6 @@ Feature: Quota Product
       | Quota 25GB  | Quota Utama 25GB 1 Bulan  | String  | 3      | 85000  | By U  | noValidationData |
       | Quota 25GB  | Quota Utama 25GB 1 Bulan  | 15      | String | 85000  | By U  | noValidationData |
       | Quota 25GB  | Quota Utama 25GB 1 Bulan  | 15      | 3      | String | By U  | noValidationData |
-      | Quota 25GB  | Quota Utama 25GB 1 Bulan  | 15      | 3      | 85000  | By U  | noValidationData |
       |             | Quota Utama 25GB 1 Bulan  | 15      | 3      | 85000  | By U  | noValidationData |
       | Quota 25GB  |                           | 15      | 3      | 85000  | By U  | noValidationData |
       | Quota 25GB  | Quota Utama 25GB 1 Bulan  |         | 3      | 85000  | By U  | noValidationData |
